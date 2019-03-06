@@ -1,0 +1,16 @@
+flake8
+jedi
+jupyter
+bpython
+pandas
+seaborn
+requests
+selenium
+bs4
+flask
+django
+numpy
+scipy
+scikit-learn
+Pillow
+boto3
