@@ -64,6 +64,10 @@ autocmd bufreadpost *
      \ endif
 " remember info about open buffers on close
 set viminfo^=%
+
+" set swap file directory
+set directory=~/.swp,~/tmp,/tmp//
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

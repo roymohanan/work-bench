@@ -1,6 +1,6 @@
 .PHONY: all
 
-ull: clean-all build-all
+all: clean-all build-all
 build-all: build-base build-vim build-py  build-node build-devops
 clean-all: clean-base clean-vim clean-py clean-node clean-devops
 
