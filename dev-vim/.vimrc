@@ -175,7 +175,10 @@ au! BufNewFile,BufReadPost *.{yaml,yml,tf,cfn} set filetype=yaml foldmethod=inde
 "" set up stuff that is usually json
 autocmd BufNewFile, BufRead *.cfn  set ft=yaml
 autocmd BufNewFile, BufRead *.params set ft=json
-autocmd BufNewFile, BufRead dockerfile set ft=yaml
+autocmd BufNewFile, BufRead Dockerfile set ft=yaml
 
 " make filetype
 autocmd filetype make setlocal noexpandtab
+
+" swap file behavior
+set noswapfile

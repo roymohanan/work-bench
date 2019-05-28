@@ -12,3 +12,9 @@ RUN sudo apt update && sudo apt install -y \
 COPY requirements.txt /tmp/
 
 RUN  sudo pip3 install --no-cache-dir -r /tmp/requirements.txt
+
+RUN mkdir /home/roy/.jupyter/
+
+COPY jupyter/jupyter_notebook_config.py /home/roy/.jupyter/
+
+EXPOSE 8888

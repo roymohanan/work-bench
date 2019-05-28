@@ -39,15 +39,15 @@ build-vim: build-base
 	cd dev-vim &&\
 	docker build --no-cache -t dev-vim --build-arg user=$(USER) -f Dockerfile .
 
-build-py: build-vim
+build-py:
 	cd dev-py &&\
 	docker build -t dev-py --build-arg user=$(USER) -f Dockerfile .
 
-build-node: build-py
+build-node:
 	cd dev-node &&\
 	docker build --no-cache -t dev-node --build-arg user=$(USER) -f Dockerfile .
 
-build-devops: build-node
+build-devops:
 	cd dev-devops &&\
 	docker build -t dev-devops \
 		--build-arg user=$(USER)  \
@@ -60,7 +60,10 @@ run-vim:
 	docker run -it -v /home/roy/:/home/$(USER)/mnt dev-vim
 
 run-py:
-	docker run -it -v /home/roy/dev/:/home/$(USER)/dev/ dev-py
+	docker run -it -v /home/roy/:/home/$(USER)/mnt/ dev-py
+
+run-py-jupyter:
+	docker run -it -v /home/roy/:/home/$(USER)/mnt/ -p 8888:8888 dev-py jupyter notebook --ip=0.0.0.0 --no-browser
 
 run-devops:
 	docker run -it -v /home/roy/dev/:/home/$(USER)/dev/ dev-devops
